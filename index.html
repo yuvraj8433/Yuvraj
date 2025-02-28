@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvraj Singh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function rotateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        // Auto-rotate every 3 seconds
+        setInterval(rotateSlider, 3000);
+
+        // Hover interaction
+        slides.forEach(slide => {
+            slide.addEventListener('mouseenter', () => {
+                slide.style.transform += ' scale(1.1)';
+            });
+
+            slide.addEventListener('mouseleave', () => {
+                slide.style.transform = slide.style.transform.replace(' scale(1.1)', '');
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Yuvraj Singh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-white py-5">
+        <div class="container text-center">
+            <img src="Yuvraj.png"
+                alt="Yuvraj Singh" class="profile-img mb-4">
+            <h1>Yuvraj Singh</h1>
+            <p class="lead">Computer Science Student | Web Developer</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yuvraj-singh-431b7b293" target="_blank" rel="noopener"
+                    class="text-white mx-3">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/yuvraj8433" target="_blank" rel="noopener" class="text-white mx-3">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- About Section -->
+        <section id="about" class="mb-5">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Education</h3>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5>Intermediate: PCM</h5>
+                            <p>Central Public Senior Secondary School<br>2022-2023</p>
+                        </div>
+
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5>BCA AIML</h5>
+                            <p>Sanskriti University<br>2023-2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid" id="skills">
+                        <div class="skill-card">Machine Learning</div>
+                        <div class="skill-card">Data Anaysis</div>
+                        <div class="skill-card">Python</div>
+                        <div class="skill-card">Java</div>
+                        <div class="skill-card">OOPs</div>
+                        <div class="skill-card">SQL</div>
+                        <div class="skill-card">HTML</div>
+                        <div class="skill-card">CSS</div>
+                        <div class="skill-card">Java Script</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Skills</h3>
+                    <div class="skills-grid" id="skills">
+                        <div class="skill-card">Project Management</div>
+                        <div class="skill-card">Team Leadership</div>
+                        <div class="skill-card">Problem Solving</div>
+                        <div class="skill-card">Communication Skills</div>
+                        <div class="skill-card">English Proficiency (Spoken)</div>
+                        <div class="skill-card">English Proficiency (Written)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="certificates" class="mb-5">
+            <h2 class="section-title mb-4">Certificates</h2>
+
+            <div class="row g-4"> <!-- Main row with gutter spacing -->
+
+                <!-- Certificate 1 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-hover"> <!-- Full height card -->
+                        <div class="card-body p-4">
+                            <div class="doc-item">
+                                <div class="mb-4">
+                                    <a href="https://www.linkedin.com/posts/yuvraj-singh-431b7b293_innovation-innovationambassador-iic-activity-7293906887098404864-cWTo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcvt6UBUczs0l6wqoGljEALwoDIy02GrlA"
+                                        target="_blank" class="text-decoration-none">
+                                        <h3 class="h5 text-primary mb-3">
+                                            Innovation Ambassador (IA) Foundation Level Training
+                                        </h3>
+                                    </a>
+                                    <p class="text-secondary mb-0">
+                                        I'm thrilled to share that I have successfully completed the Innovation
+                                        Ambassador (IA) Foundation Level Training, organized by the Ministry of
+                                        Education's Innovation Cell & AICTE. This comprehensive program, spanning 16
+                                        sessions and 30 contact hours, has significantly enriched my understanding and
+                                        skills in fostering innovation and creative problem-solving.
+                                        I am excited to leverage these insights to drive innovation in my professional
+                                        journey ahead.
+                                        A heartfelt thank you to my HOD, Prof. (Dr.) Pankaj Kumar Goswami, Ph.D for his
+                                        unwavering guidance and support throughout this learning experience.
+                                        Proud to be a part of the Institution's Innovation Council (IIC) community!
+                                    </p>
+                                </div>
+
+                                <div class="certificate-preview">
+                                    <a href="https://media.licdn.com/dms/image/v2/D4D22AQG0lkhjMlqQng/feedshare-shrink_800/B4DZTkpqHVG4Ag-/0/1739002914129?e=1743638400&v=beta&t=Rq3Oy-d-CfyJmwhuCOqnfR2HHvVcka4C6uUQcnurRB4"
+                                        target="_blank" class="d-block overflow-hidden rounded-3">
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQG0lkhjMlqQng/feedshare-shrink_800/B4DZTkpqHVG4Ag-/0/1739002914129?e=1743638400&v=beta&t=Rq3Oy-d-CfyJmwhuCOqnfR2HHvVcka4C6uUQcnurRB4"
+                                            alt="Innovation Ambassador Certificate" class="img-fluid w-100 hover-zoom">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-hover">
+                        <div class="card-body p-4">
+                            <div class="doc-item">
+                                <div class="mb-4">
+                                    <a href="https://www.linkedin.com/posts/yuvraj-singh-431b7b293_innovation-innovationambassador-iic-activity-7295497492438171649-xH6K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcvt6UBUczs0l6wqoGljEALwoDIy02GrlA"
+                                        target="_blank" class="text-decoration-none">
+                                        <h3 class="h5 text-primary mb-3">
+                                            Advanced Innovation Training
+                                        </h3>
+                                    </a>
+                                    <p class="text-secondary">
+                                        I'm thrilled to share that I have successfully completed the Innovation
+                                        Ambassador (IA) Advanced Level Training, organized by the Ministry of
+                                        Education's Innovation Cell & AICTE. This comprehensive program, spanning 16
+                                        sessions and 30 contact hours, has significantly enriched my understanding and
+                                        skills in fostering innovation and creative problem-solving.
+                                        I am excited to leverage these advanced insights to drive innovation in my
+                                        professional journey ahead.
+                                        A heartfelt thank you to Prof. (Dr.) Pankaj Kumar Goswami, Ph.D for his
+                                        unwavering guidance and support throughout this learning experience.
+                                        Proud to be a part of the Institution's Innovation Council (IIC) community!
+                                    </p>
+                                </div>
+
+                                <div class="certificate-preview">
+                                    <a href="https://media.licdn.com/dms/image/v2/D4D22AQGuea8Zn0TJcw/feedshare-shrink_800/B4DZT7QTfuHIAk-/0/1739382144014?e=1743638400&v=beta&t=DyFHHGwb-wEKQ2KUSMbDGnK3pwFtSX-MVZJ99-gd0MQ"
+                                        target="_blank" class="d-block overflow-hidden rounded-3">
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQGuea8Zn0TJcw/feedshare-shrink_800/B4DZT7QTfuHIAk-/0/1739382144014?e=1743638400&v=beta&t=DyFHHGwb-wEKQ2KUSMbDGnK3pwFtSX-MVZJ99-gd0MQ"
+                                            alt="Advanced Innovation Certificate" class="img-fluid w-100 hover-zoom">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certificate 3 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-hover"> <!-- Full height card -->
+                        <div class="card-body p-4">
+                            <div class="doc-item">
+                                <div class="mb-4">
+                                    <a href="https://www.linkedin.com/posts/yuvraj-singh-431b7b293_nationbuilding2025-casestudycompetition-learningandgrowth-activity-7296532885749002240-6_Fl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcvt6UBUczs0l6wqoGljEALwoDIy02GrlA"
+                                        target="_blank" class="text-decoration-none">
+                                        <h3 class="h5 text-primary mb-3">
+                                            Innovation Ambassador (IA) Foundation Level Training
+                                        </h3>
+                                    </a>
+                                    <p class="text-secondary mb-0">
+                                        🌟 Thrilled to Share My Achievement! 🌟
+                                        I am delighted to have participated in the Online Quiz of the NationBuilding
+                                        Case Study Competition 2025, which was held on January 5th. This experience
+                                        challenged my problem-solving and analytical thinking skills, allowing me to
+                                        contribute ideas toward impactful solutions for nation-building.
+                                        🔑 Key Takeaways:
+                                        Gained valuable insights into real-world challenges in policy-making and
+                                        development.
+                                        Sharpened my critical thinking and decision-making abilities.
+                                        Networked with like-minded individuals passionate about driving change.
+                                        I am excited to apply what I have learned to future endeavors and continue my
+                                        journey toward making a meaningful impact!
+                                    </p>
+                                </div>
+
+                                <div class="certificate-preview">
+                                    <a href="https://media.licdn.com/dms/image/v2/D4D22AQH4jV2Y7lUfFw/feedshare-shrink_800/B4DZUJ9.5IG4Ak-/0/1739629000815?e=1743638400&v=beta&t=sBw1Kf9HUFzLXqwlqtgQX4e7SqRX1U3tQnUMU6d7EI8"
+                                        target="_blank" class="d-block overflow-hidden rounded-3">
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQH4jV2Y7lUfFw/feedshare-shrink_800/B4DZUJ9.5IG4Ak-/0/1739629000815?e=1743638400&v=beta&t=sBw1Kf9HUFzLXqwlqtgQX4e7SqRX1U3tQnUMU6d7EI8"
+                                            alt="Innovation Ambassador Certificate" class="img-fluid w-100 hover-zoom">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-5">
+            <h2 class="section-title">Contact</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Email: yuvrajsingh8433075079@gmail.com</p>
+                    <p>Location: Mathura, India</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals and Scripts (Same as previous with upload functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
