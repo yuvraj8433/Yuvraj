@@ -1,3 +1,48 @@
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.summary {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+    color: #070707;
+}
+
+.resume-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    color: #081b29;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px #0ef;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .resume-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 :root {
     --tech-blue: rgb(41, 128, 185);
     --success-green: rgb(46, 204, 113);
@@ -16,11 +61,154 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 4rem 0;
+    p {
+        font-size: 1.5rem;
+        color: #3f3e3e;
+        line-height: 1.7;
+        position: relative;
+        padding-left: 2rem;
+        color: var(--bs-heading-color);
+    }
 }
+
+
+/* Row and column styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: center;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Card styling */
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 30px;
+    box-shadow: 0 40px 300px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 300px;
+    max-width: 4000px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1),
+                0 0 40px rgba(2, 232, 248, 0.1);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Card body content */
+.card-body {
+    padding: 2rem;
+    position: relative;
+    background: inherit;
+    z-index: 1;
+}
+
+/* Heading styling */
+h3 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    position: relative;
+    padding-bottom: 0rem;
+    margin-bottom: 1rem;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    border-radius: 2px;
+}
+
+/* Subheadings */
+h5 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+h5::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-accent);
+    font-size: 1em;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1rem;
+    color: #3f3e3e;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Animation */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card {
+    animation: cardEntrance 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        padding: 1rem;
+        gap: 20px;
+    }
+    
+    .card {
+        flex: 1 1 100%;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+
 
 .profile-img {
     width: 200px;
-    height: 200px;
+    height: 230px;
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
@@ -29,35 +217,10 @@ body {
 
 /* Hover effect */
 .profile-img:hover {
-    transform: scale(1.05); /* Slightly enlarge the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: scale(1.2); /* Slightly enlarge the image */
+    box-shadow: 0 8px 16px rgba(0, 0.2, 0, 0.9); /* Stronger shadow on hover */
 }
 
-.section-title {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-}
-
-.skill-card {
-    background: rgb(228, 246, 110);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-/* .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-} */
 
 .skill-card {
     position: relative;
@@ -67,23 +230,126 @@ body {
         rgba(255,255,255,0.1) 0%, 
         rgba(255,255,255,0.3) 100%);
 }
+/* --------------------------------------------------------------- */
 
-.skill-card span {
-    display: inline-block;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
+
+/* Certificates Section */
+#certificates .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between cards */
 }
 
-/* .skill-card:hover {
-    transform: translateY(-5px) rotateZ(1.5deg) scale(1.02);
-    box-shadow: 
-        0 6px 12px rgba(0,0,0,0.1),
-        0 8px 24px rgba(41, 128, 185, 0.2);
-    background: linear-gradient(45deg, 
-        rgba(255,255,255,0.2) 0%, 
-        rgba(255,255,255,0.4) 100%);
-} */
+#certificates .col-lg-6 {
+    flex: 0 0 calc(50% - 10px); /* 50% width with gap spacing */
+    max-width: calc(50% - 10px); /* 50% width with gap spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    #certificates .col-lg-6 {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
+
+/* Card Styling */
+#certificates .card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#certificates .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#certificates .card-body {
+    padding: 20px;
+}
+
+#certificates .certificate-preview img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#certificates .certificate-preview img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Common Section Styling */
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Row and Column Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between cards */
+}
+
+.col-lg-6 {
+    flex: 0 0 calc(50% - 10px); /* 50% width with gap spacing */
+    max-width: calc(50% - 10px); /* 50% width with gap spacing */
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Skills Grid Styling */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.skill-card {
+    /* background: var(--tech-blue); */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1.2px solid rgba(15, 10, 10, 0.19);
+    color: rgb(4, 4, 4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .col-lg-6 {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
+
 
 .skill-card:hover {
     transform: translateY(-8px) rotateZ(2deg) scale(1.05);
@@ -152,8 +418,6 @@ body {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
-
-
 
 
 /* Hover shine effect */
@@ -235,64 +499,7 @@ body {
     border: none;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     overflow: hidden;
 }
-
-#contact .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(42, 
-
-
-
-
-/* .doc-list {
-    list-style: none;
-    padding: 0;
-}
-
-.doc-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    background: white;
-    border-radius: 8px;
-} */
-
-/* Add to your style.css */
-.shadow-hover {
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.shadow-hover:hover {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
-}
-
-.hover-zoom {
-    transition: transform 0.3s ease;
-}
-
-.hover-zoom:hover {
-    transform: scale(1.03);
-}
-
-.text-primary {
-    color: var(--deep-teal) !important;
-}
-
-.text-secondary {
-    color: #3f75a4;
-}
-
-.certificate-preview {
-    border: 2px solid rgba(42, 93, 103, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
 
