@@ -503,3 +503,100 @@ p {
     overflow: hidden;
 }
 
+
+
+
+/* General Styling */
+.internship-section {
+    padding: 30px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2px;
+}
+
+.section-title {
+    /* text-align: center; */
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.internship-block {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    box-shadow: 0 40px 8px rgba(10, 10, 10, 0.1);
+}
+
+.internship-info {
+    margin-bottom: 20px; /* Add space between info and certificate on mobile */
+}
+
+.internship-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.internship-info p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.certificate-section {
+    text-align: center;
+}
+
+.certificate-section h3 {
+    font-size: 1.5rem;
+    color: #080808;
+    margin-bottom: 10px;
+}
+
+.certificate-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (min-width: 768px) {
+    .internship-block {
+        flex-direction: row; /* Switch back to horizontal layout on larger screens */
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .internship-info {
+        margin-right: 20px; /* Add space between info and certificate on larger screens */
+        margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+}
+
+
+
+
